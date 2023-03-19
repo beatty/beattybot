@@ -1,4 +1,4 @@
-# johnbot
+# beattybot
 
 A prototype personal Matrix bot for a large-language-model-based personal representative. This is based on the Nio template. See the original template README below for installation and usage instructions. The only additional instruction is the put your OPENAI_API_KEY in a file called .env in the root directory.
 
