@@ -1,3 +1,21 @@
+# johnbot
+
+A prototype personal Matrix bot for a large-language-model-based personal representative. This is based on the Nio template. See the original template README below for installation and usage instructions. The only additional instruction is the put your OPENAI_API_KEY in a file called .env in the root directory.
+
+## Features
+- User authentication comes for free
+- Distinctive roles based on the agent's owner, family, friends, world, and enemies.
+- Maintains conversation history with the sender (not persistent)
+- Uses OpenAI for the LLM
+
+## Roadmap
+This is purely a prototype. There are many things that could be done to make this a general purpose framework, but that's not the goal of this project.
+
+For the prototype, I'd like to add:
+- Retrieval augmentation using the owner's sources of knowledge
+- Simple tool use (e.g. https://til.simonwillison.net/llms/python-react-pattern)
+- Experiment with non-OpenAI LLMs.
+
 # Nio Template [![Built with matrix-nio](https://img.shields.io/badge/built%20with-matrix--nio-brightgreen)](https://github.com/poljar/matrix-nio) <a href="https://matrix.to/#/#nio-template:matrix.org"><img src="https://img.shields.io/matrix/nio-template:matrix.org?color=blue&label=Join%20the%20Matrix%20Room&server_fqdn=matrix-client.matrix.org" /></a>
 
 A template for creating bots with
