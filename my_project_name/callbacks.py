@@ -50,19 +50,20 @@ class Callbacks:
         if event.sender == self.client.user:
             return
 
-        logger.debug(
+        logger.info(
             f"Bot message received for room {room.display_name} | "
             f"{room.user_name(event.sender)}: {msg}"
         )
-
+        print(f"message received from {room.display_name}")
         # Process as message if in a public room without command prefix
         has_command_prefix = msg.startswith(self.command_prefix)
+        print(has_command_prefix)
 
         # room.is_group is often a DM, but not always.
         # room.is_group does not allow room aliases
         # room.member_count > 2 ... we assume a public room
         # room.member_count <= 2 ... we assume a DM
-        if not has_command_prefix and room.member_count > 2:
+        if not has_command_prefix: # and room.member_count > 2:
             # General message listener
             message = Message(self.client, self.store, self.config, msg, room, event)
             await message.process()

@@ -3,6 +3,9 @@ import asyncio
 import logging
 import sys
 from time import sleep
+from dotenv import load_dotenv
+load_dotenv()
+import openai
 
 from aiohttp import ClientConnectionError, ServerDisconnectedError
 from nio import (
