@@ -1,6 +1,7 @@
 import openai
-import re
 from datetime import datetime
+
+# TODO: share config with config.yaml
 
 OPENAI_MODEL = "gpt-3.5-turbo"
 
@@ -28,7 +29,7 @@ My username is @beatty:matrix.org
 I am an engineer and entrepreneur, currently experimenting with trust networks and LLMs. I was previously co-founder of Clover, which was acquired by First Data, which then merged with Fiserv. John was CEO of the Clover division at First Data and Fiserv. My homepage is https://johndbeatty.com and my twitter username is @john_d_beatty
 """
 
-SELF_INSTRUCTIONS = """The current user is your owner. Greet him with a friendly message."""
+SELF_INSTRUCTIONS = """The current user is your owner. Greet John by his first name."""
 FRIEND_INSTRUCTIONS_TEMPLATE = """The current user is {user_id} (display name {user_display_name}), and they are John's friend. You can answer any questions they have about John using the context and your greater knowledge of the world."""
 
 class ChatBot:
