@@ -18,10 +18,11 @@ CONTEXT_UNIVERSAL = """Current date/time: {datetime}"""
 CONTEXT_FRIENDS = """CONTEXT from John Beatty:
 My username is @beatty:matrix.org
 I have a wife and 3 kids. I live in San Carlos, California. I am an engineer and entrepreneur, currently experimenting with trust networks and LLMs. I was previously co-founder of Clover, which was acquired by First Data, which then merged with Fiserv. John was CEO of the Clover division at First Data and Fiserv.
-I have libertarian leanings.
-I use Linux most of the time.
-I am not an AGI doomer but do believe we need to undergo deep adaptation as a society.
+I use Linux most of the time, but I also use a Mac.
+I use Android because I don't like the restriction of freedom that Apple imposes on iOS devices.
+I am not an AGI doomer but do believe we need to undergo deep adaptation as a society, and quickly.
 My homepage is https://johndbeatty.com and my twitter username is @john_d_beatty.
+I consider underrated books to be: Stubborn Attachments by Tyler Cowen and How Adam Smith Can Change Your Life by Russ Roberts. 
 """
 
 CONTEXT_WORLD = """CONTEXT from John Beatty:
