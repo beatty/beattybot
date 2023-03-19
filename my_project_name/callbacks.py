@@ -54,10 +54,8 @@ class Callbacks:
             f"Bot message received for room {room.display_name} | "
             f"{room.user_name(event.sender)}: {msg}"
         )
-        print(f"message received from {room.display_name}")
         # Process as message if in a public room without command prefix
         has_command_prefix = msg.startswith(self.command_prefix)
-        print(has_command_prefix)
 
         # room.is_group is often a DM, but not always.
         # room.is_group does not allow room aliases
