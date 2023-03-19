@@ -1,6 +1,12 @@
 # beattybot
 
-A prototype personal Matrix bot for a large-language-model-based personal representative. This is based on the Nio template. See the original template README below for installation and usage instructions. The only additional instruction is the put your OPENAI_API_KEY in a file called .env in the root directory.
+A prototype personal Matrix bot for a large-language-model-based personal representative. This is based on the Nio template.
+
+See the original template README below for installation and usage instructions.
+
+You need to do two things to customize for yourself:
+ - Put your OPENAI_API_KEY in a file called .env in the root directory.
+ - Modify llm.py to include identity, friends, enemies, etc. and adjust prompts to your liking.
 
 ## Features
 - User authentication comes for free
