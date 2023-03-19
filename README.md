@@ -1,12 +1,10 @@
 # beattybot
 
-A prototype personal Matrix bot for a large-language-model-based personal representative. This is based on the Nio template.
+A prototype personal Matrix bot for a large-language-model-based personal representative. The idea is that now that we have LLMs, we can easily build personal representative agents that people can talk to and make requests and offers to. Personal representatives can be talked to by people and/or their personal representatives.
 
-See the original template README below for installation and usage instructions.
-
-You need to do two things to customize for yourself:
+This is based on the Nio template. See the original template README below for installation and usage instructions. After that, you need to do two things to customize for yourself:
  - Put your OPENAI_API_KEY in a file called .env in the root directory.
- - Modify llm.py to include identity, friends, enemies, etc. and adjust prompts to your liking.
+ - Modify llm.py to include identity, friends, enemies, etc. and adjust prompts and context to your liking. This is all static right now.
 
 ## Features
 - User authentication comes for free
@@ -18,6 +16,9 @@ You need to do two things to customize for yourself:
 This is purely a prototype. There are many things that could be done to make this a general purpose framework, but that's not the goal of this project.
 
 For the prototype, I'd like to add:
+- Persistent contexts that the owner can update through conversation (e.g. "tell my friends that I'll be in SF this Friday if anyone wants to meet up")
+- Dynamic, continuous-scale friends list based on cosine similarity or vector distance using a trust graph.
+- beattybot can listen in on all my conversations on my primary Matrix account and respond for me. If not, it would stay silent.
 - Retrieval augmentation using the owner's sources of knowledge
 - Simple tool use (e.g. https://til.simonwillison.net/llms/python-react-pattern)
 - Experiment with non-OpenAI LLMs.
