@@ -2,10 +2,9 @@
 import asyncio
 import logging
 import sys
-from time import sleep
+from time import time, sleep
 from dotenv import load_dotenv
 load_dotenv()
-import openai
 
 from aiohttp import ClientConnectionError, ServerDisconnectedError
 from nio import (
@@ -121,4 +120,10 @@ async def main():
 
 
 # Run the main function in an asyncio event loop
-asyncio.get_event_loop().run_until_complete(main())
+while True:
+    try:
+        logging.info("starting event loop...")
+        asyncio.get_event_loop().run_until_complete(main())
+    except asyncio.exceptions.TimeoutError:
+        logging.warning("Timeout error, restarting event loop...")
+        sleep(1)
