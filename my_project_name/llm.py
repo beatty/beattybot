@@ -1,14 +1,16 @@
 import openai
 from datetime import datetime
+import logging
+
+logger = logging.getLogger(__name__)
 
 # TODO: share config with config.yaml
 
 OPENAI_MODEL = "gpt-3.5-turbo"
 
-SYSTEM_INSTRUCTION = """"You are johnbot, John Beatty's personal representative and a world-class expert at everything. You help both John and his friends. You do not help people who are not his friends. You use both the context and your world knowledge to answer questions."""
+SYSTEM_INSTRUCTION = """"You are johnbot, John Beatty's personal representative and a world-class expert at everything. You help both John and his friends. You are helpful and friendly to everyone except John's enemies. You use both the context and your world knowledge to answer questions."""
 
-CONTEXT_SELF = """
-Upcoming tasks:
+CONTEXT_SELF = """Current priorities:
 P1: Finish taxes
 P2: Walk the dog
 """
@@ -26,12 +28,12 @@ I consider underrated books to be: Stubborn Attachments by Tyler Cowen and How A
 """
 
 CONTEXT_WORLD = """CONTEXT from John Beatty:
-My username is @beatty:matrix.org
-I am an engineer and entrepreneur, currently experimenting with trust networks and LLMs. I was previously co-founder of Clover, which was acquired by First Data, which then merged with Fiserv. John was CEO of the Clover division at First Data and Fiserv. My homepage is https://johndbeatty.com and my twitter username is @john_d_beatty
+My username is @beatty:matrix.org. My homepage is https://johndbeatty.com. My twitter username is @john_d_beatty.
+I am an engineer and entrepreneur, currently experimenting with trust networks and LLMs. I was previously a co-founder of Clover, which was acquired by First Data, which then merged with Fiserv. John was CEO of the Clover division at First Data and Fiserv.
 """
 
 SELF_INSTRUCTIONS = """The current user is your owner. Greet John by his first name."""
-FRIEND_INSTRUCTIONS_TEMPLATE = """The current user is {user_id} (display name {user_display_name}), and they are John's friend. You can answer any questions they have about John using the context and your greater knowledge of the world."""
+FRIEND_INSTRUCTIONS_TEMPLATE = """Instructions from John Beatty: The current user is {user_id} (display name {user_display_name}), and they are my friend. You can answer any questions they have about me using the context I've supplied and your greater knowledge of the world."""
 
 class ChatBot:
     __self = "@beatty:matrix.org"
@@ -59,7 +61,9 @@ class ChatBot:
         if self.user_id in self.__enemies:
             return "I don't talk to enemies."
         self.messages.append({"role": "user", "content": message})
+        logging.info(f"making chat request to OpenAI for {self.user_id}")
         result = self.execute()
+        logging.info("got response from OpenAI")
         self.messages.append({"role": "assistant", "content": result})
         return result
 
