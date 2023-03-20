@@ -20,7 +20,8 @@ For the prototype, I'd like to add:
 - Dynamic, continuous-scale friends list based on cosine similarity or vector distance using a trust graph.
 - beattybot can listen in on all my conversations on my primary Matrix account and respond for me. If not, it would stay silent.
 - Retrieval augmentation using the owner's sources of knowledge
-- Simple tool use (e.g. https://til.simonwillison.net/llms/python-react-pattern)
+- Experiment with Semantic Kernel for goal planning and execution (https://github.com/microsoft/semantic-kernel)
+- Experiment with simple tool use (e.g. https://til.simonwillison.net/llms/python-react-pattern)
 - Experiment with non-OpenAI LLMs.
 
 # Nio Template [![Built with matrix-nio](https://img.shields.io/badge/built%20with-matrix--nio-brightgreen)](https://github.com/poljar/matrix-nio) <a href="https://matrix.to/#/#nio-template:matrix.org"><img src="https://img.shields.io/matrix/nio-template:matrix.org?color=blue&label=Join%20the%20Matrix%20Room&server_fqdn=matrix-client.matrix.org" /></a>
