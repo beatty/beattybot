@@ -16,11 +16,12 @@ This is based on the Nio template. See the original template README below for in
 This is purely a prototype. There are many things that could be done to make this a general purpose framework, but that's not the goal of this project.
 
 For the prototype, I'd like to add:
+- The agent should reach out to you to route questions to you that it couldn't handle on its own (e.g. "Jane just let me know that she's going to be in SF this Friday. Do you want to meet up? It looks like you both have time at 2p")
 - Persistent contexts that the owner can update through conversation (e.g. "tell my friends that I'll be in SF this Friday if anyone wants to meet up")
 - Dynamic, continuous-scale friends list based on cosine similarity or vector distance using a trust graph.
 - beattybot can listen in on all my conversations on my primary Matrix account and respond for me. If not, it would stay silent.
 - Retrieval augmentation using the owner's sources of knowledge
-- Experiment with Semantic Kernel for goal planning and execution (https://github.com/microsoft/semantic-kernel)
+- Experiment with LangChain and/or Semantic Kernel for goal planning and execution (https://github.com/microsoft/semantic-kernel)
 - Experiment with simple tool use (e.g. https://til.simonwillison.net/llms/python-react-pattern)
 - Experiment with non-OpenAI LLMs.
 
